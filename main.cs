@@ -868,6 +868,7 @@ public enum CustomRoles
     Watcher,
     //Sunglasses,
     Workhorse,
+    Signal,
     Youtuber
 
    // Reflective,

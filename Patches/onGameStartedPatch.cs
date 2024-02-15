@@ -370,6 +370,7 @@ internal class ChangeRoleSettings
             Quizmaster.Init();
             Tired.Init();
             Rainbow.Init();
+            Signal.Init();
             //Tricky.Init();
 
             SabotageSystemPatch.SabotageSystemTypeRepairDamagePatch.Initialize();
@@ -1085,6 +1086,9 @@ internal class SelectRolesPatch
                             break;
                         case CustomRoles.Tired:
                             Tired.Add(pc.PlayerId);
+                            break;
+                        case CustomRoles.Signal:
+                            Signal.Add(pc.PlayerId);
                             break;
                         case CustomRoles.Rainbow:
                             Rainbow.Add();

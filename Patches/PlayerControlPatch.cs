@@ -2335,7 +2335,10 @@ class ReportDeadBodyPatch
             Utils.DoNotifyRoles(isForMeeting: true, NoCache: true, CamouflageIsForMeeting: true);
             _ = new LateTask(Utils.SyncAllSettings, 3f, "Sync all settings after report");
         }
-
+        
+        Utils.SyncAllSettings();
+        foreach (var pc in Main.AllAlivePlayerControls)
+            Signal.AddPosi(pc);
         return true;
     }
     public static void AfterReportTasks(PlayerControl player, GameData.PlayerInfo target)

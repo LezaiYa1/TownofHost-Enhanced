@@ -361,6 +361,7 @@ static class CustomRolesHelper
             CustomRoles.Silent or
             CustomRoles.Rainbow or
             CustomRoles.Susceptible or
+            CustomRoles.Signal or
             CustomRoles.Tired;
     }
     
@@ -1733,6 +1734,11 @@ static class CustomRolesHelper
                   || pc.Is(CustomRoles.Mare)) 
                   return false;
                 if ((pc.GetCustomRole().IsCrewmate() && !Tired.CanBeOnCrew.GetBool()) || (pc.GetCustomRole().IsNeutral() && !Tired.CanBeOnNeutral.GetBool()) || (pc.GetCustomRole().IsImpostor() && !Tired.CanBeOnImp.GetBool())) 
+                  return false;
+            break;
+
+            case CustomRoles.Signal:
+                if ((pc.GetCustomRole().IsCrewmate() && !Signal.CanBeOnCrew.GetBool()) || (pc.GetCustomRole().IsNeutral() && !Signal.CanBeOnNeutral.GetBool()) || (pc.GetCustomRole().IsImpostor() && !Signal.CanBeOnImp.GetBool()))
                   return false;
             break;
         }

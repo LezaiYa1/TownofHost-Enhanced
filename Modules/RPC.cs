@@ -173,6 +173,7 @@ enum CustomRPC
     SyncMiniCrewAge,
     SyncSabotageMasterSkill,
     QuizmasterMarkPlayer,
+    SignalPosition,
     //FFA
     SyncFFAPlayer,
     SyncFFANameNotify,
@@ -831,6 +832,9 @@ internal class RPCHandlerPatch
                 break;
             case CustomRPC.QuizmasterMarkPlayer:
                 Quizmaster.ReceiveRPC(reader);
+                break;
+            case CustomRPC.SignalPosition:
+                Signal.ReceiveRPC(reader);
                 break;
         }
     }
