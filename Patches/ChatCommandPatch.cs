@@ -1142,22 +1142,6 @@ internal class ChatCommands
         text = text.Replace("着", "者").Trim().ToLower();
         return text switch
         {
-            // Note for translators
-            // This file should contain not only Simplified and Traditional Chinese strings
-            // If the role has other nicknames or common misspellings in your language
-            // You can add them to this file with [ or "string" ]
-            // But please pay attention to the order of the languages
-            // so we can make the file clear and easy to manage
-
-            // Note for Contributors
-            // If you are coding a new role
-            // Pls create a new line here at the proper position
-            // Position should be same with the role name in en_US.json
-            // So translators can put nicknames or common misspellings here
-            // eg : "A" or "B" => GetString("RealRoleName"),
-            // eg : "Vector" or "Vector" => GetString("Vector"),
-            // If you need to remove the roles, please delete them directly instead of commenting them out
-
             // GM
             "GM(遊戲大師)" or "管理员" or "管理" or "gm" or "GM" => GetString("GM"),
 
