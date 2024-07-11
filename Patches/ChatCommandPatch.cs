@@ -1193,112 +1193,134 @@ internal class ChatCommands
         text = text.Replace("着", "者").Trim().ToLower();
         return text switch
         {
-            // Note for translators
-            // This file should contain not only Simplified and Traditional Chinese strings
-            // If the role has other nicknames or common misspellings in your language
-            // You can add them to this file with [ or "string" ]
-            // But please pay attention to the order of the languages
-            // so we can make the file clear and easy to manage
+            // 根据官网为基础进行分类职业
+            // Classification basis according tohre.dev
 
-            // Note for Contributors
-            // If you are coding a new role
-            // Pls create a new line here at the proper position
-            // Position should be same with the role name in en_US.json
-            // So translators can put nicknames or common misspellings here
-            // eg : "A" or "B" => GetString("RealRoleName"),
-            // eg : "Vector" or "Vector" => GetString("Vector"),
-            // If you need to remove the roles, please delete them directly instead of commenting them out
+            // Imp // 内鬼 // 偽裝者
+            // Concealing // 隐藏类 // 混淆類
+            "通緝犯" or "逃逸者" or "逃逸" => GetString("Escapist"),
+            "球狀閃電" or "球状闪电" => GetString("Lightning"),
+            "主謀" or "策划者" => GetString("Mastermind"),
+            "礦工" or "矿工" => GetString("Miner"),
+            "傀儡師" or "傀儡师" or "傀儡" => GetString("Puppeteer"),
+            "裂縫製造者" or "裂缝制造者" => GetString("RiftMaker"),
+            "清道夫" or "清道" => GetString("Scavenger"),
+            "百变怪" or "千面鬼" or "千面" => GetString("ShapeMaster"),
+            "換魂師" or "夺魂者" or "夺魂" => GetString("SoulCatcher"),
+            "隱身人" or "隐匿者" or "隐匿" or "隐身" => GetString("Swooper"),
+            "騙術師" or "骗术师" => GetString("Trickster"),
+            "送葬者" or "暗杀者" => GetString("Undertaker"),
+            "吸血鬼" or "吸血" => GetString("Vampire"),
+            "術士" or "术士" => GetString("Warlock"),
+            "野人" => GetString("Wildling"),
 
-            // GM
-            "GM(遊戲大師)" or "管理员" or "管理" or "gm" or "GM" => GetString("GM"),
+            // Imp // 内鬼 // 偽裝者
+            // Ghost // 幽灵 // 幽靈
+            "嗜血之魂" or "血液伯爵" => GetString("Bloodmoon"),
+            "爪牙" => GetString("Minion"),
 
-            // 原版职业
-            "船員" or "船员" or "白板" or "天选之子" => GetString("CrewmateTOHE"),
-            "工程師" or "工程师" => GetString("EngineerTOHE"),
-            "科學家" or "科学家" => GetString("ScientistTOHE"),
-            "守護天使" or "守护天使" => GetString("GuardianAngelTOHE"),
+            // Imp // 内鬼 // 偽裝者
+            // Hindering // 阻碍类 // 阻礙類
+            "駭客" or "骇客" or "黑客" => GetString("Anonymous"),
+            "眩暈者" or "眩晕者" or "眩晕" => GetString("Dazzler"),
+            "吞噬者" or "吞噬" => GetString("Devourer"),
+            "抹除者" or "抹除" => GetString("Eraser"),
+            "企鵝" or "企鹅" =>GetString("Penguin"),
+            "設陷者" or "设陷者" or "设陷" => GetString("Pitfall"),
+            "暗殺者" or "隐形者" =>GetString("Stealth"),
+            "躁動者" or "龙卷风" => GetString("Twister"),
+            "分散者" or "分散" => GetString("Disperser"),
+
+            // Imp // 内鬼 // 偽裝者
+            // Killing // 击杀类 // 殺人類
+            "狂妄殺手" or "狂妄杀手" => GetString("Arrogance"),
+            "狂戰士" or "狂战士" or "升级者" or "狂战士" => GetString("Berserker"),
+            "自爆兵" or "自爆" => GetString("Bomber"),
+            "賞金獵人" or "赏金猎人" or "赏金" => GetString("BountyHunter"),
+            "肢解者" or "肢解" => GetString("Butcher"),
+            "天文學家" or "天文学家" or "天文家" or "天文学" => GetString("Chronomancer"),
+            "議員" or "邪恶法官" or "议员" or "邪恶审判" => GetString("Councillor"),
+            "被詛咒的狼" or "呪狼" => GetString("CursedWolf"),
+            "簽約人" or "死亡契约" or "死亡" or "锲约" => GetString("Deathpact"),
+            "邪惡賭怪" or "邪恶赌怪" or "坏赌" or "恶赌" or "邪恶赌怪" => GetString("EvilGuesser"),
+            "邪惡的追踪者" or "邪恶追踪者" or "邪恶的追踪者" => GetString("EvilTracker"),
+            "貪婪者" or "贪婪者" or "贪婪" => GetString("Greedy"),
+            "劊子手" or "刽子手" => GetString("Hangman"),
+            "抑鬱者" or "抑郁者" or "抑郁" => GetString("Inhibitor"),
+            "教唆者" or "教唆" => GetString("Instigator"),
+            "殺人機器" or "杀戮机器" or "杀戮" or "机器" or "杀戮兵器" => GetString("KillingMachine"),
+            "賭博者" or "速度者" or "速度" => GetString("Ludopath"),
+            "策畫者" or "潜伏者" or "潜伏" => GetString("Lurker"),
+            "嗜血殺手" or "嗜血杀手" or "嗜血" => GetString("Mercenary"),
+            "刺客" or "忍者" => GetString("Ninja"),
+            "快槍手" or "快枪手" or "快枪" => GetString("QuickShooter"),
+            "破壞者" or "破坏者" or "破坏" => GetString("Saboteur"),
+            "狙擊手" or "狙击手" or "狙击" => GetString("Sniper"),
+            "陷阱師" or "诡雷" => GetString("Trapster"),
+            "潛伏者" or "失败者" or "失败的man" or "失败" => GetString("Underdog"),
+            "女巫" => GetString("Witch"),
+            "僵屍" or "僵尸" or"殭屍" or "丧尸" => GetString("Zombie"),
+            "壞迷你船員" or "坏迷你船员" or "坏小孩" or "坏迷你" => GetString("EvilMini"),
+            "吟遊詩人" or "吟游诗人" => GetString("Bard"),
+
+            // Imp // 内鬼 // 偽裝者
+            // Madmate // 叛徒类 // 叛徒類
+            "船鬼" => GetString("Crewpostor"),
+            "寄生蟲" or "寄生虫" => GetString("Parasite"),
+            "逃亡者" or "逃亡" => GetString("Refugee"),
+
+            // Imp // 内鬼 // 偽裝者
+            // Support // 帮助类 // 支援類
+            "監管者" or "监管者" or "监管" => GetString("AntiAdminer"),
+            "勒索者" or "勒索" => GetString("Blackmailer"),
+            "隱蔽者" or "隐蔽者" or "小黑人" => GetString("Camouflager"),
+            "清潔工" or "清理工" or "清洁工" => GetString("Cleaner"),
+            "軍師" or "军师" => GetString("Consigliere"),
+            "煙火工匠" or "烟花商人" or "烟花爆破者" or "烟花" => GetString("Fireworker"),
+            "歹徒" => GetString("Gangster"),
+            "懸賞者" or "教父" => GetString("Godfather"),
+            "神風特攻隊" or "神风特攻队" => GetString("Kamikaze"),
+            "化型者" or "化形者" => GetString("Morphling"),
+            "黑手黨" or "黑手党" or "黑手" => GetString("Nemesis"),
+            "時間竊賊" or "蚀时者" or "蚀时" or "偷时" => GetString("TimeThief"),
+            "衛道士" or "卫道士" or "内鬼市长" => GetString("Vindicator"),
+            "幻想家" or "幻想" => GetString("Visionary"),
+
+            // Imp // 内鬼 // 偽裝者
+            // Vanilla // 原版 // 原版
             "偽裝者" or "内鬼" => GetString("ImpostorTOHE"),
             "變形者" or "变形者" => GetString("ShapeshifterTOHE"),
+            //"魅影" or "幻想师"=> GetString("PhantomTOHE"), // 与其他职业翻译相冲突
 
-            // 隱藏職業 and 隐藏职业
-            "陽光開朗大男孩" or "阳光开朗大男孩" => GetString("Sunnyboy"),
-            "吟遊詩人" or "吟游诗人" => GetString("Bard"),
-            "核爆者" or "核武器" => GetString("Nuker"),
-
-            // 偽裝者陣營職業 and 内鬼阵营职业
-            "賞金獵人" or "赏金猎人" or "赏金" => GetString("BountyHunter"),
-            "煙火工匠" or "烟花商人" or "烟花爆破者" or "烟花" => GetString("Fireworker"),
-            "嗜血殺手" or "嗜血杀手" or "嗜血" => GetString("Mercenary"),
-            "百变怪" or "千面鬼" or "千面" => GetString("ShapeMaster"),
-            "吸血鬼" or "吸血" => GetString("Vampire"),
-            "吸血鬼之王" or "吸血鬼女王"  => GetString("Vampiress"),
-            "術士" or "术士" => GetString("Warlock"),
-            "刺客" or "忍者" => GetString("Ninja"),
-            "僵屍" or "僵尸" or"殭屍" or "丧尸" => GetString("Zombie"),
-            "駭客" or "骇客" or "黑客" => GetString("Anonymous"),
-            "礦工" or "矿工" => GetString("Miner"),
-            "殺人機器" or "杀戮机器" or "杀戮" or "机器" or "杀戮兵器" => GetString("KillingMachine"),
-            "通緝犯" or "逃逸者" or "逃逸" => GetString("Escapist"),
-            "女巫" => GetString("Witch"),
-            "傀儡師" or "傀儡师" or "傀儡" => GetString("Puppeteer"),
-            "主謀" or "策划者" => GetString("Mastermind"),
-            "時間竊賊" or "蚀时者" or "蚀时" or "偷时" => GetString("TimeThief"),
-            "狙擊手" or "狙击手" or "狙击" => GetString("Sniper"),
-            "送葬者" or "暗杀者" => GetString("Undertaker"),
-            "裂縫製造者" or "裂缝制造者" => GetString("RiftMaker"),
-            "邪惡的追踪者" or "邪恶追踪者" or "邪恶的追踪者" => GetString("EvilTracker"),
-            "邪惡賭怪" or "邪恶赌怪" or "坏赌" or "恶赌" or "邪恶赌怪" => GetString("EvilGuesser"),
-            "監管者" or "监管者" or "监管" => GetString("AntiAdminer"),
-            "狂妄殺手" or "狂妄杀手" => GetString("Arrogance"),
-            "自爆兵" or "自爆" => GetString("Bomber"),
-            "清道夫" or "清道" => GetString("Scavenger"),
-            "陷阱師" or "诡雷" => GetString("Trapster"),
-            "歹徒" => GetString("Gangster"),
-            "清潔工" or "清理工" or "清洁工" => GetString("Cleaner"),
-            "球狀閃電" or "球状闪电" => GetString("Lightning"),
-            "貪婪者" or "贪婪者" or "贪婪" => GetString("Greedy"),
-            "被詛咒的狼" or "呪狼" => GetString("CursedWolf"),
-            "換魂師" or "夺魂者" or "夺魂" => GetString("SoulCatcher"),
-            "快槍手" or "快枪手" or "快枪" => GetString("QuickShooter"),
-            "隱蔽者" or "隐蔽者" or "小黑人" => GetString("Camouflager"),
-            "抹除者" or "抹除" => GetString("Eraser"),
-            "肢解者" or "肢解" => GetString("Butcher"),
-            "劊子手" or "刽子手" => GetString("Hangman"),
-            "隱身人" or "隐匿者" or "隐匿" or "隐身" => GetString("Swooper"),
-            "船鬼" => GetString("Crewpostor"),
-            "野人" => GetString("Wildling"),
-            "騙術師" or "骗术师" => GetString("Trickster"),
-            "衛道士" or "卫道士" or "内鬼市长" => GetString("Vindicator"),
-            "寄生蟲" or "寄生虫" => GetString("Parasite"),
-            "分散者" or "分散" => GetString("Disperser"),
-            "抑鬱者" or "抑郁者" or "抑郁" => GetString("Inhibitor"),
-            "破壞者" or "破坏者" or "破坏" => GetString("Saboteur"),
-            "議員" or "邪恶法官" or "议员" or "邪恶审判" => GetString("Councillor"),
-            "眩暈者" or "眩晕者" or "眩晕" => GetString("Dazzler"),
-            "簽約人" or "死亡契约" or "死亡" or "锲约" => GetString("Deathpact"),
-            "吞噬者" or "吞噬" => GetString("Devourer"),
-            "軍師" or "军师" => GetString("Consigliere"),
-            "化型者" or "化形者" => GetString("Morphling"),
-            "躁動者" or "龙卷风" => GetString("Twister"),
-            "策畫者" or "潜伏者" or "潜伏" => GetString("Lurker"),
-            "罪犯" => GetString("Convict"),
-            "幻想家" or "幻想" => GetString("Visionary"),
-            "逃亡者" or "逃亡" => GetString("Refugee"),
-            "潛伏者" or "失败者" or "失败的man" or "失败" => GetString("Underdog"),
-            "賭博者" or "速度者" or "速度" => GetString("Ludopath"),
-            "懸賞者" or "教父" => GetString("Godfather"),
-            "天文學家" or "天文学家" or "天文家" or "天文学" => GetString("Chronomancer"),
-            "設陷者" or "设陷者" or "设陷" => GetString("Pitfall"),
-            "狂戰士" or "狂战士" or "升级者" or "狂战士" => GetString("Berserker"),
-            "壞迷你船員" or "坏迷你船员" or "坏小孩" or "坏迷你" => GetString("EvilMini"),
-            "勒索者" or "勒索" => GetString("Blackmailer"),
-            "教唆者" or "教唆" => GetString("Instigator"),
-
-            // 船員陣營職業 and 船员阵营职业
-            "擺爛人" or "摆烂人" or "摆烂" => GetString("Needy"),
-            "大明星" or "明星" => GetString("SuperStar"),
+            // Crew // 船员 // 船員
+            // Basic // 简单类 // 基本類
+            "賢者" or "瘾君子" or "醉酒" => GetString("Addict"),
+            "藥劑師" or "炼金术士" or "药剂" => GetString("Alchemist"),
             "網紅" or "网红" => GetString("Celebrity"),
             "清洗者" or "清洗" => GetString("Cleanser"),
+            "法醫" or "法医" => GetString("Doctor"),
+            "賭場管理員" or "竞猜大师" or "竞猜" => GetString("GuessMaster"),
+            "摆烂人" or "" => GetString("LazyGuy"),
+            "迷你船員" or "迷你船员" or "迷你" or "小孩" or "Mini" => GetString("Mini"),
+            "鼹鼠" => GetString("Mole"),
+            "大明星" or "明星" => GetString("SuperStar"),
+            "隨機者" or "萧暮" or "暮" or "萧暮不姓萧" => GetString("Randomizer"),
+            "任務管理員" or "任务管理者" => GetString("TaskManager"),
+            "尋跡者" or "寻迹者" or "寻迹" or "寻找鸡腿" => GetString("Tracefinder"),
+            "傳送師" or "传送师" => GetString("Transporter"),
+
+            // Crew // 船员 // 船員
+            // Ghost // 幽灵 // 幽靈
+            "獵鷹" or "猎鹰" => GetString("Hawk"),
+            "冤魂" or "典狱长" => GetString("Warden"),
+            
+            // Crew // 船员 // 船員
+            // Killing // 击杀类 // 帶刀類
+            "埋雷兵" => GetString("Bastion"),
+            "保鑣" or "保镖" => GetString("Bodyguard"),
+            "十字軍" or "十字军" => GetString("Crusader"),
+            "贗品商" or "赝品商" => GetString("Deceiver"),
+            
             "守衛者" or "守卫者" => GetString("Keeper"),
             "俠客" or "侠客" or "正义使者" => GetString("Knight"),
             "市長" or "市长" => GetString("Mayor"),
@@ -1312,17 +1334,17 @@ internal class ChatCommands
             "告密者" => GetString("Snitch"),
             "展現者" or "展现者" or "展现" => GetString("Marshall"),
             "增速師" or "增速者" or "增速" => GetString("SpeedBooster"),
-            "法醫" or "法医" => GetString("Doctor"),
+            
             "獨裁主義者" or "独裁者" or "独裁" => GetString("Dictator"),
             "偵探" or "侦探" => GetString("Detective"),
             "正義賭怪" or "正义赌怪" or "好赌" or "正义的赌怪" => GetString("NiceGuesser"),
-            "賭場管理員" or "竞猜大师" or "竞猜" => GetString("GuessMaster"),
-            "傳送師" or "传送师" => GetString("Transporter"),
+            
+            
             "時間大師" or "时间操控者" or "时间操控" => GetString("TimeManager"),
             "老兵" => GetString("Veteran"),
-            "埋雷兵" => GetString("Bastion"),
-            "保鑣" or "保镖" => GetString("Bodyguard"),
-            "贗品商" or "赝品商" => GetString("Deceiver"),
+            
+            
+            
             "擲彈兵" or "掷雷兵" => GetString("Grenadier"),
             "軍醫" or "医生" => GetString("Medic"),
             "占卜師" or "调查员" or "占卜师" => GetString("FortuneTeller"),
@@ -1337,32 +1359,32 @@ internal class ChatCommands
             "正義的追蹤者" or "正义追踪者" or "正义的追踪者" => GetString("Tracker"),
             "商人" => GetString("Merchant"),
             "總統" or "总统" => GetString("President"),
-            "獵鷹" or "猎鹰" => GetString("Hawk"),
+            
             "捕快" or "下属" => GetString("Deputy"),
             "算命師" or "研究者" => GetString("Investigator"),
             "守護者" or "守护者" or "守护" => GetString("Guardian"),
-            "賢者" or "瘾君子" or "醉酒" => GetString("Addict"),
-            "鼹鼠" => GetString("Mole"),
-            "藥劑師" or "炼金术士" or "药剂" => GetString("Alchemist"),
-            "尋跡者" or "寻迹者" or "寻迹" or "寻找鸡腿" => GetString("Tracefinder"),
+            
+            
+            
+            
             "先知" or "神谕" or "神谕者" => GetString("Oracle"),
             "靈魂論者" or "灵魂论者" => GetString("Spiritualist"),
             "變色龍" or "变色龙" or "变色" => GetString("Chameleon"),
             "檢查員" or "检查员" or "检查" => GetString("Inspector"),
             "仰慕者" or "仰慕" => GetString("Admirer"),
             "時間之主" or "时间之主" or "回溯时间" => GetString("TimeMaster"),
-            "十字軍" or "十字军" => GetString("Crusader"),
+            
             "遐想者" or "遐想" => GetString("Reverie"),
             "瞭望者" or "瞭望员" => GetString("Lookout"),
             "通訊員" or "通信员" => GetString("Telecommunication"),
             "執燈人" or "执灯人" or "执灯" or "灯人" or "小灯人" => GetString("Lighter"),
-            "任務管理員" or "任务管理者" => GetString("TaskManager"),
+            
             "目擊者" or "目击者" or "目击" => GetString("Witness"),
             "換票師" or "换票师" => GetString("Swapper"),
             "警察局長" or "警察局长" => GetString("ChiefOfPolice"),
             "好迷你船員" or "好迷你船员" or "好迷你" or "好小孩" => GetString("NiceMini"),
             "間諜" or "间谍" => GetString("Spy"),
-            "隨機者" or "萧暮" or "暮" or "萧暮不姓萧" => GetString("Randomizer"),
+            
             "猜想者" or "猜想" or "谜团" => GetString("Enigma"),
             "船長" or "舰长" or "船长" => GetString("Captain"),
             "慈善家" or "恩人" => GetString("Benefactor"),
@@ -1525,11 +1547,9 @@ internal class ChatCommands
             "嗜血之魂" or "血液伯爵" => GetString("Bloodmoon"),
             // 船員 and 船员
             "没有搜集的繁体中文" or "鬼怪" => GetString("Ghastly"),
-            "冤魂" or "典狱长" => GetString("Warden"),
+            
             "報應者" or "惩罚者" or "惩罚" or "报仇者" => GetString("Retributionist"),
-
-            // 随机阵营职业
-            "迷你船員" or "迷你船员" or "迷你" or "小孩" or "Mini" => GetString("Mini"),
+            
             _ => text,
         };
     }
